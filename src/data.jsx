@@ -5,10 +5,6 @@ export const navigation = [
       href: "home",
     },
     {
-      name: "about",
-      href: "about",
-    },
-    {
       name: "portfolio",
       href: "portfolio",
     },

@@ -6,7 +6,6 @@ import {
   OrbitControls,
   PointMaterial,
 } from "@react-three/drei";
-import { ArrowSection } from "./ArrowSection";
 import { inViewHandler } from "../animationHandler";
 import { motion, useAnimation } from "framer-motion";
 import { InView } from "react-intersection-observer";
@@ -20,7 +19,11 @@ export const Hero = () => {
         className="h-[100vh] bg-primary flex items-center w-full flex-col"
       >
         <div className="container mx-auto h-full flex justify-center">
-          <motion.div className="content-wrapper flex items-center" initial={{opacity:0, scale:0.7}} animate={animation}>
+          <motion.div
+            className="content-wrapper flex items-center"
+            initial={{ opacity: 0 }}
+            animate={animation}
+          >
             <div className="flex flex-col items-center lg:items-start">
               <div className="flex">
                 <div className="w-1 mr-8 md:h-45 bg-gradient-to-br from-violet-500 via-pink-500 to-red-500" />
@@ -29,9 +32,9 @@ export const Hero = () => {
                     My name is <span className="text-fuchsia-800">Ewan</span>
                   </h1>
                   <p className="pb-4 max-w-[480px] text-lg text-left">
-                    I'm a M-Biotech graduate with experience in data
-                    engineering, analysis, and visualisation. I also love to
-                    design, build and create. I am passionate about the maker
+                    I'm a Master of Biotechnology graduate with experience in
+                    data engineering, analysis, and visualisation. I also love
+                    to design, build and create. I am passionate about the maker
                     space and love tinkering with microcontrollers, 3-D
                     printing, and smart home technology.
                   </p>
@@ -43,20 +46,17 @@ export const Hero = () => {
                 <OrbitControls enableZoom={false} />
                 <ambientLight intensity={0.9} />
                 <directionalLight position={[3, 2, 1]} />
-                <Sphere args={[1, 100, 200]} scale={0.8}>
+                <Sphere args={[1, 100, 200]} scale={0.5}>
                   <MeshDistortMaterial
                     color="#86198F"
                     attach="material"
-                    distort={0.5}
+                    distort={0.8}
                     speed={2}
                   />
                 </Sphere>
               </Canvas>
             </div>
           </motion.div>
-        </div>
-        <div className="bg-primary flex items-center justify-center">
-          <ArrowSection />
         </div>
       </section>
     </InView>
